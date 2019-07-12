@@ -21,7 +21,6 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-unused-vars": 1,
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": 0,
     "no-use-before-define": 0
   },
   "settings": {
