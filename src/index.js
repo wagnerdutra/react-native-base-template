@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 
 import Todo from '~/components/Todo';
 import './config/DevTools';
@@ -15,7 +15,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#f5f5f5',
+    ...Platform.select({
+      ios: {
+        fontWeight: 'bold'
+      },
+      android: {
+        fontSize: 24
+      }
+    })
   }
 });
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Platform } from 'react-native';
 
 export default function Todo() {
   const [todos, setTodos] = useState([{ id: 0, text: 'Hello World!' }]);
@@ -14,7 +14,10 @@ export default function Todo() {
       {todos.map(todo => (
         <Text key={todo.id}>{todo.text}</Text>
       ))}
-      <Button title="Add todos" onPress={handleClick} />
+      <Button
+        title={Platform.OS === 'ios' ? 'ADD' : 'Adiciona'}
+        onPress={handleClick}
+      />
     </View>
   );
 }
